@@ -12,10 +12,10 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ProjectCard } from '@/components/shared/ProjectCard';
+// import { ProjectCard } from '@/components/shared/ProjectCard';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
-import { mockProjects } from '@/services/mockData';
+// import { mockProjects } from '@/services/mockData';
 
 const valueProps = [
     {
@@ -68,7 +68,7 @@ const howItWorks = [
 ];
 
 export function HomePage() {
-    const featuredProjects = mockProjects.slice(0, 3);
+    // const featuredProjects = mockProjects.slice(0, 3);
 
     return (
         <div className="min-h-screen flex flex-col">
