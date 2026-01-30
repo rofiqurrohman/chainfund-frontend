@@ -1,0 +1,197 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ===== CSS Variables for Design System ===== */
+:root {
+  /* Primary - Deep Indigo (Trust) */
+  --primary: 234 89% 41%;
+  --primary-foreground: 0 0% 100%;
+
+  /* Accent - Electric Blue (Technology/Web3) */
+  --accent: 210 100% 56%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Success - Forest Green */
+  --success: 142 76% 36%;
+  --success-foreground: 0 0% 100%;
+
+  /* Background & Surface */
+  --background: 220 20% 98%;
+  --foreground: 224 71% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 71% 4%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 71% 4%;
+
+  /* Muted */
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+
+  /* Border & Input */
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 234 89% 41%;
+
+  /* Semantic */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 0 0% 100%;
+
+  /* Chart Colors */
+  --chart-1: 234 89% 41%;
+  --chart-2: 210 100% 56%;
+  --chart-3: 142 76% 36%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 0 84% 60%;
+
+  /* Radius */
+  --radius: 0.625rem;
+
+  /* Sidebar */
+  --sidebar: 0 0% 100%;
+  --sidebar-foreground: 224 71% 4%;
+  --sidebar-border: 220 13% 91%;
+  --sidebar-accent: 220 14% 96%;
+  --sidebar-accent-foreground: 224 71% 4%;
+  --sidebar-primary: 234 89% 41%;
+  --sidebar-primary-foreground: 0 0% 100%;
+}
+
+.dark {
+  --background: 224 71% 4%;
+  --foreground: 210 20% 98%;
+  --card: 224 50% 8%;
+  --card-foreground: 210 20% 98%;
+  --popover: 224 50% 8%;
+  --popover-foreground: 210 20% 98%;
+  --primary: 234 89% 55%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 210 100% 56%;
+  --accent-foreground: 0 0% 100%;
+  --muted: 223 47% 11%;
+  --muted-foreground: 215 20% 65%;
+  --border: 216 34% 17%;
+  --input: 216 34% 17%;
+  --ring: 234 89% 55%;
+  --destructive: 0 62% 50%;
+  --destructive-foreground: 0 0% 100%;
+
+  --sidebar: 224 50% 8%;
+  --sidebar-foreground: 210 20% 98%;
+  --sidebar-border: 216 34% 17%;
+  --sidebar-accent: 223 47% 11%;
+  --sidebar-accent-foreground: 210 20% 98%;
+}
+
+@layer components {
+  button {
+    @apply cursor-pointer;
+  }
+}
+
+/* ===== Base Styles ===== */
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Utility Classes ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark .glass {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
