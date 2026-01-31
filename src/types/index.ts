@@ -1,24 +1,19 @@
 // ===== Risk Level =====
-export type RiskLevel = "LOW" | "MEDIUM" | "HIGH";
+export type RiskLevel = 'LOW' | 'MEDIUM' | 'HIGH';
 
 // ===== Investment Status =====
-export type InvestmentStatus =
-  | "LOCKED"
-  | "RUNNING"
-  | "PROFIT_GENERATING"
-  | "COMPLETED"
-  | "FAILED";
+export type InvestmentStatus = 'LOCKED' | 'RUNNING' | 'PROFIT_GENERATING' | 'COMPLETED' | 'FAILED';
 
 // ===== Industry Type =====
 export type Industry =
-  | "F&B"
-  | "Retail"
-  | "Agriculture"
-  | "Technology"
-  | "Manufacturing"
-  | "Services"
-  | "Healthcare"
-  | "Education";
+  | 'F&B'
+  | 'Retail'
+  | 'Agriculture'
+  | 'Technology'
+  | 'Manufacturing'
+  | 'Services'
+  | 'Healthcare'
+  | 'Education';
 
 // ===== Project =====
 export interface Project {
@@ -84,10 +79,10 @@ export interface User {
 // ===== Transaction =====
 export interface Transaction {
   id: string;
-  type: "DEPOSIT" | "WITHDRAWAL" | "INVESTMENT" | "PROFIT" | "REFUND";
+  type: 'DEPOSIT' | 'WITHDRAWAL' | 'INVESTMENT' | 'PROFIT' | 'REFUND';
   amount: number;
   timestamp: string;
-  status: "PENDING" | "COMPLETED" | "FAILED";
+  status: 'PENDING' | 'COMPLETED' | 'FAILED';
   txHash?: string;
 }
 
